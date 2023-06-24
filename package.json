@@ -1,0 +1,33 @@
+{
+  "name": "HanaLearn",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "sqlite3": "^5"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "build": {
+        "tasks": [
+            {
+                "for": "hana",
+                "dest": "../db"
+            },
+            {
+                "for": "node-cf"
+            }
+        ]
+    },
+    "requires": {
+        "db": {
+            "kind": "hana-cloud"
+        }
+    }
+}
+
+}
